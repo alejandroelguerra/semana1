@@ -1,0 +1,37 @@
+create table FACT_PROV(
+CIF_PROVEEDOR integer(4) NOT NULL,
+RAZ_PROVEEDOR varchar(15) NOT NULL,
+NUM_FACTURA integer(10)NOT NULL,
+DES_FACTURA VARCHAR(50) NOT NULL,
+BAS_IMPONIBLE numeric(7,2)NOT NULL,
+IVA_IMPORTE integer(3)NOT NULL,
+TOT_IMPORTE numeric(7,2)NOT NULL,
+FEC_FACTURA DATE NOT NULL,
+FEC_VENCIMIENTO DATE NOT NULL,
+primary key (CIF_PROVEEDOR)
+);
+
+create table PROV_COMP(
+CIF_PROVEEDOR integer(4) NOT NULL,
+RAZ_PROVEEDOR varchar(15) NOT NULL,
+REG_NOTARIAL integer(10)NOT NULL,
+SEG_RESPONSABILIDAD numeric(7,2)NOT NULL,
+SEG_IMPORTE numeric(7,2)NOT NULL,
+FEC_HOMOLOGACION DATE NOT NULL,
+primary key (CIF_PROVEEDOR)
+);
+
+
+
+insert into fact_prov values(10,"LUZ SL",20,'La factura de luz',40.50,21,46.60,'2020-04-08','2020-05-08');
+insert into fact_prov values(20,"SECURY SL",20,'La factura de seguridad',300.50,21,363.60,'2020-04-10','2020-05-10');
+insert into fact_prov values(30,"GAS SL",30,'La factura del gas',50.01,21,60.51,'2020-04-07','2020-05-07');
+insert into fact_prov values(40,"AGUA SL",40,'La factura del agua',30.20,21,36.54,'2020-04-13','2020-05-13');
+insert into fact_prov values(50,"CLEAN SL",50,'La factura de limpieza',150.00,21,181.50,'2020-04-16','2020-05-16');
+
+
+insert into prov_comp values(5,"COMPUTER SL",5,132.21,168.45,'2019-05-14');
+insert into prov_comp values(15,"CONSTRUCCION SL",15,332.21,468.05,'2018-05-14');
+insert into prov_comp values(25,"MUEBLES SL",25,156.21,245.15,'2019-08-18');
+insert into prov_comp values(35,"UNIFORMES SL",35,248.26,365.78,'2019-07-24');
+insert into prov_comp values(45,"VEHICULOS SL",45,547.21,601.45,'2019-02-04');
